@@ -134,7 +134,7 @@
               (when (should-notify? result)
                 (when should-growl
                   (growl (:status result) (:message result)))
-                (users-notifier (:message result)))
-              (Thread/sleep 200)))
+                (users-notifier (:message result)))))
           (catch Exception ex (.printStackTrace ex)))
+        (Thread/sleep 500)
         (recur new-tracker)))))
